@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (SudokuSolver)
-<<<<<<< HEAD
-=======
+
+
 #Version Number
 set (SudokuSolver_VERSION_MAJOR 1)
 set (SudokuSolver_VERSION_MINOR 0)
@@ -17,5 +17,5 @@ configure_file (
 include_directories("${PROJECT_BINARY_DIR}")
 
 # Add the executable
->>>>>>> Began CMAKE integration (In-Progress)
+
 add_executable(SudokuSolver main.cxx)
