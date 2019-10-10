@@ -1,11 +1,12 @@
-///-----------------------------------------------------------------------------
-/// @file SudokuCell.h
-///
-/// Author: Evan Loughlin
-///
-/// Description: Enumeration of possible values within a Sudoku Cell. Implemented
-/// as bit flags in order to utilize bitwise operations.
-///-----------------------------------------------------------------------------
+/*
+   @file SudokuCell.h   
+   
+   Author: Evan Loughlin   
+
+   Description: Enumeration of possible values within a Sudoku Cell. Each cell 
+   can contain one of 10 values. Implemented as bit flags in order to utilize 
+   bitwise operations.
+*/
 
 enum SudokuCell 
 {
