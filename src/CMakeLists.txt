@@ -14,8 +14,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-# Automatically link Qt executables to qtmain target on Windows.
-cmake_policy(SET CMP0020 OLD)
+# Link executables to qtmain.lib automatically when they link to QtCore IMPORTED target
+cmake_policy(SET CMP0020 NEW)
 
 # Set the path to your Qt install
 set(CMAKE_PREFIX_PATH /mnt/c/ws/cvi42/evan-cvi/external-libs/inst64/Qt-5.9.3)
