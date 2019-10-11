@@ -4,8 +4,8 @@
    Author: Evan Loughlin   
 
    Description: Enumeration of possible values within a Sudoku Cell. Each cell 
-   can contain one of 10 values. Implemented as bit flags in order to utilize 
-   bitwise operations.
+   can contain one of 9 values, or blank. Implemented as bit flags in order to 
+   utilize bitwise operations.
 */
 
 enum SudokuCell 
