@@ -35,7 +35,9 @@ set(CMAKE_AUTORCC ON)
 cmake_policy(SET CMP0020 NEW)
 
 # Set the path to your Qt install
-set(CMAKE_PREFIX_PATH /mnt/c/ws/cvi42/evan-cvi/external-libs/inst64/Qt-5.9.3)
+# set(CMAKE_PREFIX_PATH /mnt/c/ws/cvi42/evan-cvi/external-libs/inst64/Qt-5.9.3)
+set(CMAKE_PREFIX_PATH /home/evan/Qt-5.9.3)
+
 
 # Determine if Qt5 Directories will be found
 #if(NOT CMAKE_PREFIX_PATH AND NOT Qt5Widgets_DIR)
