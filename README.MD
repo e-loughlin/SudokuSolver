@@ -8,6 +8,7 @@ run ./sudoku <inputName.txt>
 
 The input.txt file is the Sudoku puzzle to be solved, taking the following form:
 
+```
 1 3 0 0 7 0 0 0 0
 6 0 0 1 9 5 0 0 0
 0 9 8 0 0 0 0 6 0
@@ -17,6 +18,7 @@ The input.txt file is the Sudoku puzzle to be solved, taking the following form:
 0 6 0 0 0 0 2 8 0
 0 0 0 4 1 9 0 0 5
 0 0 0 0 8 0 0 7 9
+```
 
 Note that 0's indicate blanks in the input.
 
