@@ -21,5 +21,3 @@ The input.txt file is the Sudoku puzzle to be solved, taking the following form:
 ```
 
 Note that 0's indicate blanks in the input.
-
-Keep the input.txt file in the same folder as the executable.  
