@@ -1,9 +1,10 @@
-Sudoku Puzzle Solver in C++
-Solves any Suduko puzzle.
-Created by Evan Loughlin - 2018.07.25
+# Sudoku Puzzle Solver in C++
+## Solves any Suduko puzzle.
+### Created by Evan Loughlin - 2018.07.25
 ______________________________________
 
-Usage: run ./sudoku <inputName.txt>
+# Usage: 
+run ./sudoku <inputName.txt>
 
 The input.txt file is the Sudoku puzzle to be solved, taking the following form:
 
