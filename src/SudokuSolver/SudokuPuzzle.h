@@ -9,6 +9,7 @@
 #ifndef SUDOKUPUZZLE_H
 #define SUDOKUPUZZLE_H
 
+#include "SudokuCell.h"
 #include <QObject>
 #include <QVector>
 
