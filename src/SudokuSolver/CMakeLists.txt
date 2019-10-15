@@ -3,10 +3,10 @@ file(GLOB all_sources
   "*.cpp"
 )
 
-add_library(${This} STATIC ${all_sources})
+add_library(SudokuSolverLibrary STATIC ${all_sources})
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-target_link_libraries(${This} Qt5::Widgets)
+target_link_libraries(SudokuSolverLibrary Qt5::Widgets)
 
 add_subdirectory(Test)
