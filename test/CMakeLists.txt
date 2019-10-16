@@ -1,18 +1,23 @@
 add_executable(
     unit_tests
-    example_add.cpp
-    example_subtract.cpp
+    TestSudokuPuzzle.cpp
     )
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 target_link_libraries(
     unit_tests
     gtest_main
-    example
+    SudokuSolverLibrary
+    Qt5::Widgets
     )
+
+add_definitions(-DQT_NO_VERSION_TAGGING)
+
 
 add_test(
   NAME
     unit
   COMMAND
-    ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/unit_tests
+    ${CMAKE_BINARY_DIR}/test/unit_tests
   )
