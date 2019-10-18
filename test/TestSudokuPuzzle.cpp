@@ -5,7 +5,7 @@
 
 namespace 
 {
-    class TestSudokuPuzzle : public ::testing::test 
+    class TestSudokuPuzzle : public ::testing::Test 
     {
      protected:
         TestSudokuPuzzle(){}

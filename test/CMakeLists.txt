@@ -12,9 +12,6 @@ target_link_libraries(
     Qt5::Widgets
     )
 
-add_definitions(-DQT_NO_VERSION_TAGGING)
-
-
 add_test(
   NAME
     unit
