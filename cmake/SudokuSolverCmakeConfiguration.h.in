@@ -1,5 +1,0 @@
-// Configured options and settings for SudokuSolver
-
-#define SudokuSolver_VERSION_MAJOR @SudokuSolver_VERSION_MAJOR@
-#define SudokuSolver_VERSION_MINOR @SudokuSolver_VERSION_MINOR@
-
