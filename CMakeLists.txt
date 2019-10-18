@@ -10,7 +10,6 @@ set(CMAKE_CXX_STANDARD 14)
 enable_testing()
 
 add_subdirectory(src)
-add_subdirectory(test)
 
 # place binaries and libraries according to GNU standards
 include(GNUInstallDirs)
@@ -85,8 +84,6 @@ include_directories("${PROJECT_BINARY_DIR}")
 ################################
 if (test)
 
-  # This adds another subdirectory, which has 'project(gtest)'.
-  add_subdirectory(${PROJECT_SOURCE_DIR}/lib/gtest-1.6.0)
 
 
   # Include the gtest library. gtest_SOURCE_DIR is available due to
