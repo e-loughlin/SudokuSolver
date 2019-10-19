@@ -27,7 +27,7 @@ b -notb
 ### Dependencies
 * Python 3.6.8
 * Qt 5.9.3
-
+* cmake 3.10.2
 
 ### Creating New Classes (Interfaces, Headers, Implementations...)
 ```
