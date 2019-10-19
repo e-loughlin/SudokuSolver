@@ -22,7 +22,6 @@ def stringToBool(v):
 
 argumentParser = argparse.ArgumentParser(description='Build settings.')
 argumentParser.add_argument('-notests', '--notests', '-notb', '--notb', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
-argumentParser.add_argument('-c', '--clean', dest='clean', type=stringToBool, nargs='?', const=True, default=False, help="Cleans build from current working directory.")
 argumentParser.add_argument('-ca', '--cleanall', dest='clean_all', type=stringToBool, nargs='?', const=True, default=False, help="Cleans build directory.")
 
 def run_tests():
@@ -50,14 +49,13 @@ def run_make_at_root():
     os.system("cd {0} && make && cd {1}".format(get_build_dir(), cwd))
 
 def clean_rebuild():
-    os.system("cd {0} && rm -rf * && cd {1}".format(get_git_root(), os.getcwd()))
+    os.system("cd {0} && rm -rf * && cd {1}".format(get_build_dir(), os.getcwd()))
     run_cmake_at_root()
     run_make_at_root()
 
 def get_git_root():
     git_repo = git.Repo(os.getcwd(), search_parent_directories=True)
     git_root = git_repo.git.rev_parse("--show-toplevel")
-    print(git_root)
     return git_root
 
 def get_src_dir():
@@ -66,7 +64,7 @@ def get_src_dir():
 def get_build_dir():
     return get_git_root() + "/build"
 
-def build_from_src_dir():
+def build_from_current_dir():
     # Get same directory as current, but within /build (#TODO: Make this less hacky)
     cwd = os.getcwd()
     buildCwd = cwd.replace("/src", "/build/src")
@@ -89,18 +87,18 @@ def main():
         exit()
         
     if not (build_dir_exists()):
+        get_user_permission("No /build directory detected. Initiate full build?")
         make_build_dir()
         clean_rebuild()
         exit()
 
-
     if(args.clean_all):
-        if(get_user_permission("Clean *entire* /build directory?")):
+        if(get_user_permission("Clean *entire* /build directory? (This deletes the /build directory)")):
             clean_rebuild()
         exit()
 
     # Build recursively
-    build_from_src_dir()
+    build_from_current_dir()
 
     # Run all tests
     if(not args.notests):
