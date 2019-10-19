@@ -11,6 +11,7 @@ include_directories(
 	"${PROJECT_BINARY_DIR}"
 	"${CMAKE_CURRENT_SOURCE_DIR}/SudokuSolver")
 
+
 # Set the path to your Qt install
 set(CMAKE_PREFIX_PATH /mnt/c/ws/cvi42/evan-cvi/external-libs/inst64/Qt-5.9.3)
 # set(CMAKE_PREFIX_PATH /home/evan/Qt-5.9.3/lib/cmake)

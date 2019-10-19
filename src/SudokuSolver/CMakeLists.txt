@@ -25,3 +25,5 @@ target_include_directories(
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 target_link_libraries(SudokuSolverLibrary PUBLIC Qt5::Widgets)
+
+add_subdirectory(Test)
