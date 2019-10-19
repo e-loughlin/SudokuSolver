@@ -3,8 +3,9 @@
 ### Created by Evan Loughlin - 2018.07.25
 ______________________________________
 
-# Development (Currently Linux Only):
+# Development (Currently Ubuntu Only):
 ```
+sudo ./install_dependencies.sh
 source environment.sh
 
 ```
