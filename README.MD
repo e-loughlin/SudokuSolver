@@ -3,6 +3,29 @@
 ### Created by Evan Loughlin - 2018.07.25
 ______________________________________
 
+# Development (Currently Linux Only):
+```
+source environment.sh
+
+```
+
+# Building With Tests
+```
+cd src/
+b
+```
+
+# Building Without Tests
+```
+cd src/
+b -notb
+```
+
+# Creating New Classes (Interfaces, Headers, Implementations...)
+```
+newclass -h
+```
+
 # Usage: 
 run ./sudoku <inputName.txt>
 
