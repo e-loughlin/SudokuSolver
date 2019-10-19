@@ -3,7 +3,9 @@
 ### Created by Evan Loughlin - 2018.07.25
 ______________________________________
 
-### Development (Currently Ubuntu Only):
+# Development (Currently Ubuntu Only):
+
+### Sourcing Environment and Installing Dependencies
 ```
 sudo ./install_dependencies.sh
 source environment.sh
@@ -32,8 +34,8 @@ b -notb
 newclass -h
 ```
 
-### Usage: 
-run ./sudoku <inputName.txt>
+# Usage: 
+run ./RunSudokuSolver <inputName.txt>
 
 The input.txt file is the Sudoku puzzle to be solved, taking the following form:
 
