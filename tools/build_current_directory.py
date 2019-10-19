@@ -20,10 +20,7 @@ def stringToBool(v):
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
 argumentParser = argparse.ArgumentParser(description='Build settings.')
-argumentParser.add_argument('-notests', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
-argumentParser.add_argument('-notb', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
-argumentParser.add_argument('--notests', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
-argumentParser.add_argument('--notb', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
+argumentParser.add_argument('-notests', '--notests', '-notb', '--notb' dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
 
 def run_tests():
     # Get same directory as current, but within /build
@@ -41,6 +38,9 @@ def build():
     buildCwd = cwd.replace("/src", "/build/src")
     
     os.system("cd {0} && make -b && cd {1}".format(buildCwd, cwd))
+
+def build_directory_exists()
+
 
 def cwd_in_src():
     return ("build/src" not in os.getcwd()) and ("/src" in os.getcwd()) 
