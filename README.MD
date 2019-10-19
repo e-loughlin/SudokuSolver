@@ -3,36 +3,36 @@
 ### Created by Evan Loughlin - 2018.07.25
 ______________________________________
 
-# Development (Currently Ubuntu Only):
+### Development (Currently Ubuntu Only):
 ```
 sudo ./install_dependencies.sh
 source environment.sh
 
 ```
 
-# Building With Tests
+### Building With Tests
 ```
 cd src/
 b
 ```
 
-# Building Without Tests
+### Building Without Tests
 ```
 cd src/
 b -notb
 ```
 
-# Dependencies
+### Dependencies
 * Python 3.6.8
 * Qt 5.9.3
 
 
-# Creating New Classes (Interfaces, Headers, Implementations...)
+### Creating New Classes (Interfaces, Headers, Implementations...)
 ```
 newclass -h
 ```
 
-# Usage: 
+### Usage: 
 run ./sudoku <inputName.txt>
 
 The input.txt file is the Sudoku puzzle to be solved, taking the following form:
