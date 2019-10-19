@@ -4,9 +4,6 @@
 # Development Environment Setup
 ################################
 
-# Download dependencies
-git submodule update --init --recursive
-
 # Get current script directory
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
