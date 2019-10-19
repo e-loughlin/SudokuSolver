@@ -20,8 +20,10 @@ def stringToBool(v):
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
 argumentParser = argparse.ArgumentParser(description='Build settings.')
+argumentParser.add_argument('-notests', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
+argumentParser.add_argument('-notb', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
 argumentParser.add_argument('--notests', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
-argumentParser.add_argument('--notb', dest='notb', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
+argumentParser.add_argument('--notb', dest='notests', type=stringToBool, nargs='?', const=True, default=False, help="Disables building tests.")
 
 def run_tests():
     # Get same directory as current, but within /build
@@ -53,7 +55,7 @@ def main():
 
     # Run all tests
     args = argumentParser.parse_args()
-    if(not args.notests and not args.notb):
+    if(not args.notests):
         run_tests()
 
 if __name__ == "__main__":
