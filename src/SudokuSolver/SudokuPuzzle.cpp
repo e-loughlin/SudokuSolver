@@ -6,13 +6,29 @@
 
 #include "SudokuPuzzle.h"
 
-
 SudokuPuzzle::SudokuPuzzle()
 {
+    for(int i = 0; i < mNumRows*mNumColumns; i++)
+    {
+        mAllCells.append(SudokuCell::BLANK);
+    }
+}
+
+SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> cells)
+{
+    for(int i = 0; i < mNumRows*mNumColumns; i++)
+    {
+        mAllCells.append(cells.at(i));
+    }
 }
 
 SudokuPuzzle::~SudokuPuzzle()
 {
+}
+
+QVector<SudokuCell> SudokuPuzzle::allCells()
+{
+    return mAllCells;
 }
 
 // SudokuCell& SudokuPuzzle::valueAt(int row, int column) const
@@ -48,3 +64,8 @@ SudokuPuzzle::~SudokuPuzzle()
 // {
 
 // }
+
+void SudokuPuzzle::initializeAccessors()
+{
+
+}

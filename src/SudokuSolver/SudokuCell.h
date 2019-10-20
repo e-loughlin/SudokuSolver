@@ -8,6 +8,9 @@
    utilize bitwise operations.
 */
 
+#ifndef SUDOKUCELL_H
+#define SUDOKUCELL_H
+
 enum SudokuCell 
 {
     BLANK = 0,
@@ -21,3 +24,5 @@ enum SudokuCell
     _8 = 1 << 7, // Binary: 010000000
     _9 = 1 << 8, // Binary: 100000000
 };
+
+#endif // SUDOKUCELL_H
