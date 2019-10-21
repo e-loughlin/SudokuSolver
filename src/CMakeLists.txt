@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.10 FATAL_ERROR)
-set(PATH_TO_QT_INSTALL /usr/lib/qt5/bin)
+# set(PATH_TO_QT_INSTALL /usr/lib/qt5/bin)
 
 add_subdirectory(SudokuSolver)
 
