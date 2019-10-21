@@ -31,6 +31,7 @@ Keep the input.txt file in the same folder as the executable.
 #include <fstream>
 #include <cstdint>
 
+#include "SudokuPuzzle.h"
 #include "SudokuCell.h"
 
 using namespace std;

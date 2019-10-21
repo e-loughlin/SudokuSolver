@@ -7,9 +7,9 @@ add_executable(
     run_tests
     ${sources}
     )
-message(${sources})
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5Widgets)
+find_package(Qt5Core)
 
 target_link_libraries(
     run_tests
@@ -17,6 +17,10 @@ target_link_libraries(
     ${TestedLibrary}
     Qt5::Widgets
     )
+
+    find_package(Qt5Widgets)
+    # message("TEST: Qt5Widgets found...")
+    # message(${Qt5Widgets_FOUND})
 
 target_include_directories(run_tests PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../../
