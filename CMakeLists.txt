@@ -25,6 +25,9 @@ set(CMAKE_AUTORCC ON)
 # Link executables to qtmain.lib automatically when they link to QtCore IMPORTED target
 cmake_policy(SET CMP0020 NEW)
 
+# Allow GTEST to be built into libraries that it's not included in
+cmake_policy(SET CMP0079 NEW)
+
 # Set the path to your Qt install
 # set(CMAKE_PREFIX_PATH /mnt/c/ws/cvi42/evan-cvi/external-libs/inst64/Qt-5.9.3)
 # set(CMAKE_PREFIX_PATH /home/evan/Qt-5.9.3)

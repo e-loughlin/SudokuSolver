@@ -14,21 +14,17 @@
 
 #include "IThruster.h"
 
-#include <QObject>
+class QString;
 
-
-class Thruster : public QObject, public IThruster
+class Thruster : public IThruster
 {
-Q_OBJECT
-
  public:
     explicit Thruster();
     virtual ~Thruster();
 
  public:
-
- private:
-
+    QString activate(int level) override;
 };
 
 #endif //THRUSTER_H
+

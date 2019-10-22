@@ -31,7 +31,8 @@ def run_tests():
 
     # Recursively search for and run test executables
     for filename in Path(buildCwd).glob("**/*"):
-        if os.path.basename(filename) == "run_tests":
+        filename = os.path.basename(filename)
+        if "RunTests_" in filename and "." not in filename:
             os.system(filename)
 
 def build_dir_exists():

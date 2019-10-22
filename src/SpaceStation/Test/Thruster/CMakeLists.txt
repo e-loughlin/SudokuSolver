@@ -1,8 +1,8 @@
 
-set(TestedLibrary SudokuSolverLibrary)
+set(TestedLibrary SpaceStationLibrary)
 set(TestExecutable RunTests_${TestedLibrary})
 
-set(sources ${CMAKE_CURRENT_SOURCE_DIR}/TestSudokuPuzzle.cpp)
+set(sources ${CMAKE_CURRENT_SOURCE_DIR}/TestThruster.cpp)
 
 add_executable(
     ${TestExecutable}

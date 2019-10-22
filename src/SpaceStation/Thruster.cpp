@@ -11,13 +11,16 @@
 
 #include "Thruster.h"
 
-
-
 Thruster::Thruster()
 {
 }
 
 Thruster::~Thruster()
 {
+}
+
+QString Thruster::activate(int level)
+{
+    return "";
 }
 

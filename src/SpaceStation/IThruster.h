@@ -8,6 +8,7 @@
 /// Description:
 ///-----------------------------------------------------------------------------
 
+#include <QString>
 
 #ifndef ITHRUSTER_H
 #define ITHRUSTER_H

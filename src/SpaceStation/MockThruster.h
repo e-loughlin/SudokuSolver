@@ -9,9 +9,4 @@ class MockThruster : public IThruster
 
  public:
   MOCK_METHOD1(activate, QString(int level));
-
-  QString makeActivateReturn(QString thingYouWantItToReturn);
-  void expectActivateNotCalled();
 };
-
-MockThruster::
