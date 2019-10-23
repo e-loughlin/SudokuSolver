@@ -8,7 +8,7 @@
 /// Description:
 ///-----------------------------------------------------------------------------
 
-#include <QString>
+#include <string>
 
 #ifndef ITHRUSTER_H
 #define ITHRUSTER_H
@@ -19,7 +19,7 @@ class IThruster
     virtual ~IThruster(){}
 
  public:
-    virtual QString activate(int level) = 0; // PURE VIRTUAL!!!!!
+    virtual std::string activate(int level) = 0; // PURE VIRTUAL!!!!!
 
 };
 

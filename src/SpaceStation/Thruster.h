@@ -13,8 +13,15 @@
 #define THRUSTER_H
 
 #include "IThruster.h"
+#include "string"
 
-class QString;
+enum ThrusterLevel
+{
+   OFF = 0,
+   _1 = 1,
+   _2 = 2,
+   _3 = 3
+};
 
 class Thruster : public IThruster
 {
@@ -23,7 +30,8 @@ class Thruster : public IThruster
     virtual ~Thruster();
 
  public:
-    QString activate(int level) override;
+    std::string activate(int level) override;
+    
 };
 
 #endif //THRUSTER_H

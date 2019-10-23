@@ -19,8 +19,18 @@ Thruster::~Thruster()
 {
 }
 
-QString Thruster::activate(int level)
+std::string Thruster::activate(int level)
 {
-    return "";
-}
+    switch(level)
+    {
+        case 1:
+            return "Ruuummmbbbllleee";
+        case 2:
+            return "Vrrrrrrrrrrrrrrrrrrrr";
+        case 3:
+            return "WOOOOOOOOSSSSSHHHHHHHHH!!!!";
+        default:
+            return "";
+    }
+}   
 

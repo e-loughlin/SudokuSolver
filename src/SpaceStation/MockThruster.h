@@ -1,5 +1,5 @@
 #include "gmock/gmock.h"
-#include <QString>
+#include <string>
 
 class MockThruster : public IThruster 
 {
@@ -8,5 +8,5 @@ class MockThruster : public IThruster
     virtual ~MockThruster();
 
  public:
-  MOCK_METHOD1(activate, QString(int level));
+  MOCK_METHOD1(activate, std::string(int level));
 };

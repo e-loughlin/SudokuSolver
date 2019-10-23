@@ -25,9 +25,28 @@ namespace
 
     };
 
-    TEST_F(TestThruster, CanBeInstantiated)
+    TEST_F(TestThruster, ActivateWillReturnRumbleOnLevel1)
     {
+        std::string expectedNoise = "Ruuummmbbbllleee";
+        int level = 1;
 
+        EXPECT_EQ(mPatient->activate(level), expectedNoise);
+    }
+
+    TEST_F(TestThruster, ActivateWillReturnVrrrrrOnLevel2)
+    {
+        std::string expectedNoise = "Vrrrrrrrrrrrrrrrrrrrr";
+        int level = 2;
+
+        EXPECT_EQ(mPatient->activate(level), expectedNoise);
+    }
+
+    TEST_F(TestThruster, ActivateWillReturnWooshOnLevel3)
+    {
+        std::string expectedNoise = "WOOOOOOOOSSSSSHHHHHHHHH!!!!";
+        int level = 3;
+
+        EXPECT_EQ(mPatient->activate(level), expectedNoise);
     }
 
 } //namespace

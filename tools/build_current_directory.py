@@ -30,10 +30,10 @@ def run_tests():
     buildCwd = cwd.replace("/src", "/build/src")
 
     # Recursively search for and run test executables
-    for filename in Path(buildCwd).glob("**/*"):
-        filename = os.path.basename(filename)
+    for filepath in Path(buildCwd).glob("**/*"):
+        filename = os.path.basename(filepath)
         if "RunTests_" in filename and "." not in filename:
-            os.system(filename)
+            os.system(filepath)
 
 def build_dir_exists():
     return os.path.isdir(get_build_dir())
