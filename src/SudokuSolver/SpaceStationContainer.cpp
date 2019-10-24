@@ -7,22 +7,6 @@
 #include "FuelTank.h"
 
 
-
-class Sensor
-{
-    
-}
-
-class SupplyHold
-{
-
-}
-
-class FuelTank
-{
-    
-}
-
 // HEADER
 class SpaceStation
 {
@@ -40,7 +24,7 @@ class SpaceStation
 }
 
 // CONSTRUCTOR DEFINITION
-SpaceStation::SpaceStation(Thruster& thruster, Sensor& sensor, SupplyHold& supplyHold, FuelTank& fuelTank) :
+SpaceStation::SpaceStation(I_Thruster& thruster, I_Sensor& sensor, I_SupplyHold& supplyHold, I_FuelTank& fuelTank) :
     mThruster(thruster),
     mSensor(sensor),
     mSupplyHold(supplyHold),
@@ -56,11 +40,12 @@ class SpaceStationContainer
         ~SpaceStationContainer();
 
     private:
-        QScopedPointer<SpaceStation> mSpaceStation;
-        QScopedPointer<Thruster> mThruster;
-        QScopedPointer<Sensor> mSensor;
-        QScopedPointer<SupplyHold> mSupplyHold;
-        QScopedPointer<FuelTank> mFuelTank;
+        SpaceStation& mSpaceStation;
+        Thruster& mThruster;
+        Sensor& mSensor;
+        SupplyHold& mSupplyHold;
+        FuelTank& mFuelTank;
+}
 
 // CONTAINER CONSTRUCTOR
 SpaceStationContainer::SpaceStationContainer() :
@@ -68,8 +53,9 @@ SpaceStationContainer::SpaceStationContainer() :
     mSensor(new Sensor()),
     mSupplyHold(new SupplyHold()),
     mFuelTank(new FuelTank()),
-    mSpaceStation(new SpaceStation(*mThruster, *mSensor, *mSupplyHold, *mFuelTank))
+    mSpaceStation(new SpaceStation(mThruster, mSensor, mSupplyHold, mFuelTank))
 {
+
 }
 
 

@@ -29,10 +29,11 @@ namespace
         void TearDown() override
         {
             mPatient.reset();
-            mThruster.reset();
-            mSupplyHold.reset();
-            mFuelTank.reset();
+
             mSensor.reset();
+            mFuelTank.reset();
+            mSupplyHold.reset();
+            mThruster.reset();
         }
 
         QScopedPointer<SpaceStation> mPatient;

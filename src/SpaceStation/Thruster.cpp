@@ -33,4 +33,3 @@ std::string Thruster::activate(int level)
             return "";
     }
 }   
-
