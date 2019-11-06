@@ -1,6 +1,6 @@
 # Sudoku Puzzle Solver in C++
 ## Solves any Suduko puzzle.
-### Created by Evan Loughlin - 2018.07.25
+### Author: Evan Loughlin
 ______________________________________
 
 # Development (Currently Ubuntu Only):
