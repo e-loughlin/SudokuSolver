@@ -1,8 +1,4 @@
-cmake_minimum_required (VERSION 3.10 FATAL_ERROR)
-# set(PATH_TO_QT_INSTALL /usr/lib/qt5/bin)
-
 add_subdirectory(SudokuSolver)
-add_subdirectory(SpaceStation)
 
 # Find includes in the build directories
 set(CMAKE_INCLUDE_CURRENT_DIR)
