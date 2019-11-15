@@ -35,6 +35,17 @@ def run_tests():
         if "RunTests_" in filename and "." not in filename:
             os.system(filepath)
 
+def delete_tests():
+    # Get same directory as current, but within /build
+    cwd = os.getcwd()
+    buildCwd = cwd.replace("/src", "/build/src")
+
+    # Recursively search for and run test executables
+    for filepath in Path(buildCwd).glob("**/*"):
+        filename = os.path.basename(filepath)
+        if "RunTests_" in filename and "." not in filename:
+            os.remove(filepath)
+
 def build_dir_exists():
     return os.path.isdir(get_build_dir())
 
@@ -97,6 +108,9 @@ def main():
         if(get_user_permission("Clean *entire* /build directory? (This deletes the /build directory)")):
             clean_rebuild()
         exit()
+
+    # Delete previously built tests
+    delete_tests()
 
     # Build recursively
     build_from_current_dir()
