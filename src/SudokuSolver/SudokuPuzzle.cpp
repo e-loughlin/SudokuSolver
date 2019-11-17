@@ -8,17 +8,29 @@
 
 SudokuPuzzle::SudokuPuzzle()
 {
-    for(int i = 0; i < mNumRows*mNumColumns; i++)
+    for(int row = 0; row < mNumRows; row++)
     {
-        mAllCells.append(SudokuCell::BLANK);
+        QVector<SudokuCell> entireRow;
+        for(int column = 0; column < mNumColumns; column++)
+        {
+            entireRow.append(SudokuCell::BLANK);
+        }
+
+        mCellMatrix.append(entireRow);
     }
 }
 
 SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> cells)
 {
-    for(int i = 0; i < mNumRows*mNumColumns; i++)
+    for(int row = 0; row < mNumRows; row++)
     {
-        mAllCells.append(cells.at(i));
+        QVector<SudokuCell> entireRow;
+        for(int column = 0; column < mNumColumns; column++)
+        {
+            entireRow.append(mCellMatrix.at(row + column));
+        }
+
+        mCellMatrix.append(entireRow);
     }
 }
 
@@ -26,15 +38,15 @@ SudokuPuzzle::~SudokuPuzzle()
 {
 }
 
-QVector<SudokuCell> SudokuPuzzle::allCells()
+QVector<QVector<SudokuCell>> SudokuPuzzle::cellMatrix()
 {
-    return mAllCells;
+    return mCellMatrix;
 }
 
-// SudokuCell& SudokuPuzzle::valueAt(int row, int column) const
-// {
-//     return mPuzzle.at(row).at(column);
-// }
+const SudokuCell& SudokuPuzzle::valueAt(int row, int column) const
+{
+    return mCellMatrix.at(row).at(column);
+}
 
 // void setCell(SudokuCell value, int rowIndex, int columnIndex)
 // {

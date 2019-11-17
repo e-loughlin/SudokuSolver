@@ -9,11 +9,12 @@
 #ifndef SUDOKUPUZZLE_H
 #define SUDOKUPUZZLE_H
 
+#include "I_SudokuPuzzle.h"
 #include "SudokuCell.h"
 #include <QObject>
 #include <QVector>
 
-class SudokuPuzzle
+class SudokuPuzzle : public I_SudokuPuzzle
 {
  public:
     explicit SudokuPuzzle();
@@ -22,8 +23,8 @@ class SudokuPuzzle
     virtual ~SudokuPuzzle();
 
  public:
-   //  SudokuCell& valueAt(int row, int column) const;
-   QVector<SudokuCell> allCells();
+    const SudokuCell& valueAt(int row, int column) const;
+    QVector<QVector<SudokuCell>> cellMatrix();
    //  void setCell(SudokuCell value, int row, int column);
    //  QVector<SudokuCell> rowAt(int rowIndex) const;
    //  QVector<SudokuCell> columnAt(int columnIndex) const; 
@@ -33,10 +34,7 @@ private:
    void initializeAccessors();
 
  private:
-   QVector<SudokuCell> mAllCells;
-   QVector<QVector<SudokuCell>> mPuzzleRows;
-   QVector<QVector<SudokuCell>> mPuzzleColumns;
-   QVector<QVector<SudokuCell>> mPuzzleQuadrants;
+   QVector<QVector<SudokuCell>> mCellMatrix;
    const int mNumRows = 9;
    const int mNumColumns = 9;
 };

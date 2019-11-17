@@ -31,10 +31,12 @@ namespace
 
     TEST_F(TestSudokuPuzzle, DefaultConstructorWillInitializeBlankPuzzle)
     {
-        QVector<SudokuCell> allCells = mPatient->allCells();
-        for (SudokuCell cell : allCells)
+        for (int row = 0; row < 9; row++)
         {
-            ASSERT_EQ(cell, SudokuCell::BLANK);
+            for(int column = 0; column < 9; column ++)
+            {
+                ASSERT_EQ(mPatient->valueAt(row, column), SudokuCell::BLANK);
+            }
         }
     }
 
@@ -42,6 +44,20 @@ namespace
     {
         QVector<SudokuCell> randomCells = randomSudokuCells();
         mPatient.reset(new SudokuPuzzle(randomCells));
+    }
+
+    TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValue)
+    {
+        QVector<SudokuCell> randomCells = randomSudokuCells();
+        mPatient.reset(new SudokuPuzzle(randomCells));
+
+        for(int row = 0; row < 9; row++)
+        {
+            for(int column = 0; column < 9; column++)
+            {
+                ASSERT_EQ(mPatient->valueAt(row, column), randomCells.at(row + column));
+            }
+        }
     }
 
     // Test Helpers
