@@ -30,9 +30,6 @@ class SudokuPuzzle : public I_SudokuPuzzle
    //  QVector<SudokuCell> columnAt(int columnIndex) const; 
    //  QVector<SudokuCell> quadrantAt(int quadrantIndex) const;
 
-private:
-   void initializeAccessors();
-
  private:
    QVector<QVector<SudokuCell>> mCellMatrix;
    const int mNumRows = 9;

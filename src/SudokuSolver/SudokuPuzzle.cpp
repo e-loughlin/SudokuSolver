@@ -76,8 +76,3 @@ const SudokuCell& SudokuPuzzle::valueAt(int row, int column) const
 // {
 
 // }
-
-void SudokuPuzzle::initializeAccessors()
-{
-
-}
