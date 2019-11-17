@@ -102,11 +102,13 @@ def main():
         get_user_permission("No /build directory detected. Initiate full build?")
         make_build_dir()
         clean_rebuild()
+        run_tests()
         exit()
 
     if(args.clean_all):
         if(get_user_permission("Clean *entire* /build directory? (This deletes the /build directory)")):
             clean_rebuild()
+            run_tests()
         exit()
 
     # Delete previously built tests
