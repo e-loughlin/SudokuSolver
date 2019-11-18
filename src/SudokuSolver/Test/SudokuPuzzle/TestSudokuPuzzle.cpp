@@ -24,9 +24,11 @@ namespace
 
         QScopedPointer<SudokuPuzzle> mPatient;
 
-        // Helper functions
+        // Helper Functions
         SudokuCell randomSudokuCell();
-        QVector<SudokuCell> randomSudokuCells();
+        QVector<SudokuCell> randomSudokuCellList(int size);
+        QVector<QVector<SudokuCell>> randomSudokuCellMatrix();
+
     };
 
     TEST_F(TestSudokuPuzzle, DefaultConstructorWillInitializeBlankPuzzle)
@@ -42,7 +44,7 @@ namespace
 
     TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValueWhenConstructedWithList)
     {
-        QVector<SudokuCell> randomCells = randomSudokuCells();
+        QVector<SudokuCell> randomCells = randomSudokuCellList(9*9);
         mPatient.reset(new SudokuPuzzle(randomCells)); 
 
         for(int row = 0; row < 9; row++)
@@ -54,20 +56,44 @@ namespace
         }
     }
 
+    TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValueWhenConstructedWithMatrix)
+    {
+        QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
+        mPatient.reset(new SudokuPuzzle(randomMatrix));
+
+        for(int row = 0; row < 9; row++)
+        {
+            for(int column = 0; column < 9; column++)
+            {
+                ASSERT_EQ(mPatient->valueAt(row, column), randomMatrix.at(row).at(column));
+            }
+        }
+    }
+
     // Test Helpers
     SudokuCell TestSudokuPuzzle::randomSudokuCell()
     {
         return static_cast<SudokuCell>(rand() % SudokuCell::_9);
     }
 
-    QVector<SudokuCell> TestSudokuPuzzle::randomSudokuCells()
+    QVector<SudokuCell> TestSudokuPuzzle::randomSudokuCellList(int size)
     {
         QVector<SudokuCell> randomCells;
-        for (int i = 0; i < 9*9; i++)
+        for (int i = 0; i < size; i++)
         {
             randomCells.append(randomSudokuCell());
         }
         return randomCells;
+    }
+
+    QVector<QVector<SudokuCell>> TestSudokuPuzzle::randomSudokuCellMatrix()
+    {
+        QVector<QVector<SudokuCell>> randomMatrix;
+        for (int row = 0; row < 9; row++)
+        {
+            randomMatrix.append(randomSudokuCellList(9));
+        }
+        return randomMatrix;
     }
     
 } //namespace
