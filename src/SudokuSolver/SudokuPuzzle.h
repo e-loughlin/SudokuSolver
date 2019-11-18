@@ -19,16 +19,20 @@ class SudokuPuzzle : public I_SudokuPuzzle
  public:
     explicit SudokuPuzzle();
     explicit SudokuPuzzle(QVector<SudokuCell> cells);
+    explicit SudokuPuzzle(QVector<QVector<SudokuCell>> cellMatrix);
 
     virtual ~SudokuPuzzle();
 
  public:
     const SudokuCell& valueAt(int row, int column) const;
     QVector<QVector<SudokuCell>> cellMatrix();
-   //  void setCell(SudokuCell value, int row, int column);
+    void setCell(int row, int column, SudokuCell value);
    //  QVector<SudokuCell> rowAt(int rowIndex) const;
    //  QVector<SudokuCell> columnAt(int columnIndex) const; 
    //  QVector<SudokuCell> quadrantAt(int quadrantIndex) const;
+
+ private:
+    void initializeBlankPuzzle();
 
  private:
    QVector<QVector<SudokuCell>> mCellMatrix;

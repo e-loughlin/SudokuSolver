@@ -40,22 +40,16 @@ namespace
         }
     }
 
-    TEST_F(TestSudokuPuzzle, CanBeConstructedWithQVector)
+    TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValueWhenConstructedWithList)
     {
         QVector<SudokuCell> randomCells = randomSudokuCells();
-        mPatient.reset(new SudokuPuzzle(randomCells));
-    }
-
-    TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValue)
-    {
-        QVector<SudokuCell> randomCells = randomSudokuCells();
-        mPatient.reset(new SudokuPuzzle(randomCells));
+        mPatient.reset(new SudokuPuzzle(randomCells)); 
 
         for(int row = 0; row < 9; row++)
         {
             for(int column = 0; column < 9; column++)
             {
-                ASSERT_EQ(mPatient->valueAt(row, column), randomCells.at(row + column));
+                ASSERT_EQ(mPatient->valueAt(row, column), randomCells.at(row*9 + column));
             }
         }
     }

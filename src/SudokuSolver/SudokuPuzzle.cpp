@@ -5,47 +5,27 @@
 ///-----------------------------------------------------------------------------
 
 #include "SudokuPuzzle.h"
+#include "iostream"
 
 SudokuPuzzle::SudokuPuzzle()
 {
-    for(int row = 0; row < mNumRows; row++)
-    {
-        QVector<SudokuCell> entireRow;
-        for(int column = 0; column < mNumColumns; column++)
-        {
-            entireRow.append(SudokuCell::BLANK);
-        }
-
-        mCellMatrix.append(entireRow);
-    }
+    initializeBlankPuzzle();
 }
 
 SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> listOfCells)
 {
-    for(int row = 0; row < mNumRows; row++)
+    initializeBlankPuzzle();
+    for(int i = 0; i < listOfCells.size(); i++)
     {
-        QVector<SudokuCell> entireRow;
-        for(int column = 0; column < mNumColumns; column++)
-        {
-            entireRow.append(listOfCells.at(row + column));
-        }
-
-        mCellMatrix.append(entireRow);
+        int rowIndex = i/9;
+        int columnIndex = i%9;
+        this->setCell(rowIndex, columnIndex, listOfCells.at(i));
     }
 }
 
-SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> cells)
+SudokuPuzzle::SudokuPuzzle(QVector<QVector<SudokuCell>> cellMatrix)
 {
-    for(int row = 0; row < mNumRows; row++)
-    {
-        QVector<SudokuCell> entireRow;
-        for(int column = 0; column < mNumColumns; column++)
-        {
-            entireRow.append(mCellMatrix.at(row + column));
-        }
-
-        mCellMatrix.append(entireRow);
-    }
+    mCellMatrix = QVector<QVector<SudokuCell>>(cellMatrix);
 }
 
 SudokuPuzzle::~SudokuPuzzle()
@@ -61,6 +41,26 @@ const SudokuCell& SudokuPuzzle::valueAt(int row, int column) const
 {
     return mCellMatrix.at(row).at(column);
 }
+
+void SudokuPuzzle::setCell(int row, int column, SudokuCell value)
+{
+    mCellMatrix[row][column] = value;
+}
+
+void SudokuPuzzle::initializeBlankPuzzle()
+{
+    for(int row = 0; row < mNumRows; row++)
+    {
+        QVector<SudokuCell> entireRow;
+        for(int column = 0; column < mNumColumns; column++)
+        {
+            entireRow.append(SudokuCell::BLANK);
+        }
+
+        mCellMatrix.append(entireRow);
+    }
+}
+
 
 // void setCell(SudokuCell value, int rowIndex, int columnIndex)
 // {
