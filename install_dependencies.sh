@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git submodule update --init --recursive
+git submodule update --recursive --remote
 
 sudo apt install python3-pip
 pip3 install gitpython
