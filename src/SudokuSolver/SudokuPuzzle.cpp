@@ -20,6 +20,20 @@ SudokuPuzzle::SudokuPuzzle()
     }
 }
 
+SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> listOfCells)
+{
+    for(int row = 0; row < mNumRows; row++)
+    {
+        QVector<SudokuCell> entireRow;
+        for(int column = 0; column < mNumColumns; column++)
+        {
+            entireRow.append(listOfCells.at(row + column));
+        }
+
+        mCellMatrix.append(entireRow);
+    }
+}
+
 SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> cells)
 {
     for(int row = 0; row < mNumRows; row++)
