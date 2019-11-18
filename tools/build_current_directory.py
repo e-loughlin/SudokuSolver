@@ -79,6 +79,7 @@ def get_build_dir():
 def build_from_current_dir():
     # Get same directory as current, but within /build (#TODO: Make this less hacky)
     cwd = os.getcwd()
+    os.system("touch ./CMakeLists.txt")
     buildCwd = cwd.replace("/src", "/build/src")
     
     os.system("cd {0} && make -b && cd {1}".format(buildCwd, cwd))
