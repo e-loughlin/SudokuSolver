@@ -2,6 +2,8 @@
 
 git submodule update --init --recursive
 git submodule update --recursive --remote
+git submodule foreach git pull origin master
+git submodule update tools/CppCodeGenerator 
 
 sudo apt install python3-pip
 pip3 install gitpython
