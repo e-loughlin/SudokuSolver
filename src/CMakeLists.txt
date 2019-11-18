@@ -5,7 +5,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR)
 
 
 # Add the executable
-add_executable(RunSudokuSolver main.cxx)
+add_executable(RunSudokuSolver main.cpp)
 
 
 find_package(Qt5Widgets)
