@@ -56,6 +56,16 @@ namespace
         }
     }
 
+    TEST_F(TestSudokuPuzzle, ConstructingWithListPerformsDeepCopy)
+    {
+        QVector<SudokuCell> randomCells = randomSudokuCellList(9*9);
+        mPatient.reset(new SudokuPuzzle(randomCells));
+        
+        randomCells.resize(0);
+
+        ASSERT_GE(mPatient->valueAt(4,4), 0);
+    }
+
     TEST_F(TestSudokuPuzzle, ValueAtReturnsCorrectValueWhenConstructedWithMatrix)
     {
         QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
@@ -68,6 +78,16 @@ namespace
                 ASSERT_EQ(mPatient->valueAt(row, column), randomMatrix.at(row).at(column));
             }
         }
+    }
+
+    TEST_F(TestSudokuPuzzle, ConstructingWithMatrixPerformsDeepCopy)
+    {
+        QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
+        mPatient.reset(new SudokuPuzzle(randomMatrix));
+        
+        randomMatrix.resize(0);
+
+        ASSERT_GE(mPatient->valueAt(4,4), 0);
     }
 
     // Test Helpers
