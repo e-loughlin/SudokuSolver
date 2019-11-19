@@ -26,9 +26,9 @@ class SudokuPuzzle : public I_SudokuPuzzle
  public:
     const SudokuCell& valueAt(int row, int column) const;
     QVector<QVector<SudokuCell>> cellMatrix();
-    void setCell(int row, int column, SudokuCell value);
-   //  QVector<SudokuCell> rowAt(int rowIndex) const;
-   //  QVector<SudokuCell> columnAt(int columnIndex) const; 
+    void setCell(int rowIndex, int columnIndex, SudokuCell value);
+    const QVector<SudokuCell>& rowAt(int rowIndex) const;
+    QVector<SudokuCell> columnAt(int columnIndex) const; 
    //  QVector<SudokuCell> quadrantAt(int quadrantIndex) const;
 
  private:

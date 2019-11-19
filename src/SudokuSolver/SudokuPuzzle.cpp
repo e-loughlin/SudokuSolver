@@ -61,21 +61,20 @@ void SudokuPuzzle::initializeBlankPuzzle()
     }
 }
 
+const QVector<SudokuCell>& SudokuPuzzle::rowAt(int rowIndex) const
+{
+    return mCellMatrix.at(rowIndex);
+}
 
-// void setCell(SudokuCell value, int rowIndex, int columnIndex)
-// {
-//     mPuzzle[rowIndex][columnIndex] = value;
-// }
-
-// QVector<SudokuCell>& rowAt(int rowIndex) const
-// {
-//     return mPuzzle.at(rowIndex);
-// }
-
-// QVector<SudokuCell>& columnAt(int columnIndex) const
-// {
-    
-// }
+QVector<SudokuCell> SudokuPuzzle::columnAt(int columnIndex) const
+{
+    QVector<SudokuCell> column;
+    for (int row = 0; row < mNumRows; row++)
+    {
+        column.append(mCellMatrix.at(row).at(columnIndex));
+    }
+    return column;      
+}
 
 // // Quadrants within SudokuPuzzle are the 9-cell regions distributed as follows:
 // // -------------

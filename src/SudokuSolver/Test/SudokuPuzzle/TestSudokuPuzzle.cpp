@@ -28,7 +28,6 @@ namespace
         SudokuCell randomSudokuCell();
         QVector<SudokuCell> randomSudokuCellList(int size);
         QVector<QVector<SudokuCell>> randomSudokuCellMatrix();
-
     };
 
     TEST_F(TestSudokuPuzzle, DefaultConstructorWillInitializeBlankPuzzle)
@@ -88,6 +87,39 @@ namespace
         randomMatrix.resize(0);
 
         ASSERT_GE(mPatient->valueAt(4,4), 0);
+    }
+
+    TEST_F(TestSudokuPuzzle, RowAccessorRetrievesCorrectValues)
+    {
+        QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
+        mPatient.reset(new SudokuPuzzle(randomMatrix));
+
+        for(int row = 0; row < 9; row++)
+        {
+            for(int column = 0; column < 9; column++)
+            {
+                ASSERT_EQ(mPatient->rowAt(row).at(column), randomMatrix.at(row).at(column)); 
+            }
+        }
+    }
+
+    TEST_F(TestSudokuPuzzle, ColumnAccessorRetrievesCorrectValues)
+    {
+        QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
+        mPatient.reset(new SudokuPuzzle(randomMatrix));
+
+        for(int row = 0; row < 9; row++)
+        {
+            for(int column = 0; column < 9; column++)
+            {
+                ASSERT_EQ(mPatient->columnAt(column).at(row), randomMatrix.at(row).at(column)); 
+            }
+        }
+    }
+
+    TEST_F(TestSudokuPuzzle, QuadrantAccessorRetrievesCorrectValues)
+    {
+        
     }
 
     // Test Helpers
