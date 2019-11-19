@@ -119,7 +119,14 @@ namespace
 
     TEST_F(TestSudokuPuzzle, QuadrantAccessorRetrievesCorrectValues)
     {
-        
+        QVector<QVector<SudokuCell>> randomMatrix = randomSudokuCellMatrix();
+        mPatient.reset(new SudokuPuzzle(randomMatrix));
+        QVector<QVector<SudokuCell>> quadrants;
+
+        for(int quadrantIndex = 0; quadrantIndex < 9; quadrantIndex++)
+        {
+
+        }
     }
 
     // Test Helpers
@@ -147,5 +154,9 @@ namespace
         }
         return randomMatrix;
     }
-    
+
+    // QVector<QVector<SudokuCell>> TestSudokuPuzzle::quadrants(SudokuPuzzle puzzle)
+    // {
+    // }
+
 } //namespace

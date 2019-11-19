@@ -76,16 +76,26 @@ QVector<SudokuCell> SudokuPuzzle::columnAt(int columnIndex) const
     return column;      
 }
 
-// // Quadrants within SudokuPuzzle are the 9-cell regions distributed as follows:
-// // -------------
-// // | 1 | 2 | 3 |  
-// // -------------
-// // | 4 | 5 | 6 |  
-// // -------------
-// // | 7 | 8 | 9 |
-// // -------------
-// // This function returns a QVector containing the 9 SudokuCells 
-// QVector<SudokuCell>& quadrantAt(int quadrantIndex) const
-// {
-
-// }
+// Quadrants within SudokuPuzzle are the 9-cell regions distributed as follows:
+// -------------
+// | 0 | 1 | 2 |  
+// -------------
+// | 3 | 4 | 5 |  
+// -------------
+// | 6 | 7 | 8 |
+// -------------
+// This function returns a QVector containing the 9 SudokuCells 
+QVector<SudokuCell> SudokuPuzzle::quadrantAt(int quadrantIndex) const
+{
+    int rowLowerBound = (quadrantIndex / 3) * 3;
+    int columnLowerBound = (quadrantIndex % 3) * 3;
+    QVector<SudokuCell> cells;
+    for(int row = rowLowerBound; row < rowLowerBound + 3; row++)
+    {
+        for(int column = columnLowerBound; column < columnLowerBound + 3; column++)
+        {
+            cells.append(this->valueAt(row, column));
+        }
+    }
+    return cells;
+}

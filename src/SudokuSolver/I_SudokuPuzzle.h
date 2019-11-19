@@ -26,7 +26,7 @@ class I_SudokuPuzzle
     virtual void setCell(int row, int column, SudokuCell value) = 0;
     virtual const QVector<SudokuCell>& rowAt(int rowIndex) const = 0;
     virtual QVector<SudokuCell> columnAt(int columnIndex) const = 0;
-   //  virtual QVector<SudokuCell> quadrantAt(int quadrantIndex) const = 0;
+    virtual QVector<SudokuCell> quadrantAt(int quadrantIndex) const = 0;
 
 };
 

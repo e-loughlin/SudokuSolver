@@ -29,7 +29,7 @@ class SudokuPuzzle : public I_SudokuPuzzle
     void setCell(int rowIndex, int columnIndex, SudokuCell value);
     const QVector<SudokuCell>& rowAt(int rowIndex) const;
     QVector<SudokuCell> columnAt(int columnIndex) const; 
-   //  QVector<SudokuCell> quadrantAt(int quadrantIndex) const;
+    QVector<SudokuCell> quadrantAt(int quadrantIndex) const;
 
  private:
     void initializeBlankPuzzle();
