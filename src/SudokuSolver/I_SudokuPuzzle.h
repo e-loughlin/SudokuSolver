@@ -23,9 +23,9 @@ class I_SudokuPuzzle
  public:
     virtual const SudokuCell& valueAt(int row, int column) const = 0;
     virtual QVector<QVector<SudokuCell>> cellMatrix() = 0;
-   //  virtual void setCell(SudokuCell value, int row, int column) = 0;
-   //  virtual QVector<SudokuCell> rowAt(int rowIndex) const = 0;
-   //  virtual QVector<SudokuCell> columnAt(int columnIndex) const = 0; 
+    virtual void setCell(int row, int column, SudokuCell value) = 0;
+    virtual const QVector<SudokuCell>& rowAt(int rowIndex) const = 0;
+    virtual QVector<SudokuCell> columnAt(int columnIndex) const = 0;
    //  virtual QVector<SudokuCell> quadrantAt(int quadrantIndex) const = 0;
 
 };
