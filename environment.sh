@@ -11,4 +11,4 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 alias b="python3 ${DIR}/tools/build_current_directory.py"
 
 # Set alias for new_class.py script
-alias newclass="${DIR}/tools/CppCodeGenerator/build/main"
+alias codegen="${DIR}/tools/CppCodeGenerator/build/CppCodeGenerator"
