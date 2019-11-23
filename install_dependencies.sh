@@ -22,3 +22,4 @@ rm -rf build
 mkdir build
 cd build
 go build ../main.go
+mv main CppCodeGenerator
