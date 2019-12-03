@@ -1,6 +1,6 @@
 
 set(TestedLibrary SudokuSolverLibrary)
-set(TestedClass SudokuPuzzle)
+set(TestedClass SudokuCell)
 set(TestExecutable RunTests_${TestedClass})
 
 set(test_sources ${CMAKE_CURRENT_SOURCE_DIR}/Test${TestedClass}.cpp)
@@ -18,6 +18,7 @@ target_link_libraries(
     gtest_main
     ${TestedLibrary}
     Qt5::Widgets
+    gmock
     )
 
 target_include_directories(${TestExecutable} PRIVATE

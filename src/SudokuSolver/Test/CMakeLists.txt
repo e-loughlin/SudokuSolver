@@ -1,1 +1,2 @@
 add_subdirectory(SudokuPuzzle)
+add_subdirectory(SudokuCell)

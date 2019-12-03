@@ -54,7 +54,7 @@ void SudokuPuzzle::initializeBlankPuzzle()
         QVector<SudokuCell> entireRow;
         for(int column = 0; column < mNumColumns; column++)
         {
-            entireRow.append(SudokuCell::BLANK);
+            entireRow.append(SudokuCellValue::BLANK);
         }
 
         mCellMatrix.append(entireRow);
