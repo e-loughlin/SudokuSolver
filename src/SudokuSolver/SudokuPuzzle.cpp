@@ -7,6 +7,8 @@
 #include "SudokuPuzzle.h"
 #include "iostream"
 
+//TODO: Need to modify the Puzzle so that it instantiates its own SudokuCells
+
 SudokuPuzzle::SudokuPuzzle()
 {
     initializeBlankPuzzle();
