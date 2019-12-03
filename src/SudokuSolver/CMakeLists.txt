@@ -20,10 +20,12 @@ target_include_directories(
   SudokuSolverLibrary
   PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
+    ${PROJECT_BINARY_DIR}/googletest/googletest-src/googlemock/include
+    ${PROJECT_BINARY_DIR}/googletest/googletest-src/googletest/include
 )
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-target_link_libraries(SudokuSolverLibrary PUBLIC Qt5::Widgets)
+target_link_libraries(SudokuSolverLibrary PUBLIC Qt5::Widgets gmock gtest)
 
 add_subdirectory(Test)

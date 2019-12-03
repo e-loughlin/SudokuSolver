@@ -14,4 +14,5 @@ find_package(Qt5Widgets)
 target_link_libraries(
 	RunSudokuSolver
 	Qt5::Widgets
-	SudokuSolverLibrary)
+	SudokuSolverLibrary
+	gmock)
