@@ -1,37 +1,26 @@
-///-----------------------------------------------------------------------------
-/// @file SudokuCell.h
-///
-/// Copyright (C) Circle Cardiovascular Imaging 2019
-///
-/// Author: Evan Loughlin
-///-----------------------------------------------------------------------------
+/*
+   @file SudokuCell.h   
+   
+   Author: Evan Loughlin   
 
+   Description: Enumeration of possible values within a Sudoku Cell.
+*/
 
 #ifndef SUDOKUCELL_H
 #define SUDOKUCELL_H
 
-#include "I_SudokuCell.h"
-
-#include <QObject>
-
-class SudokuCell : public QObject, public I_SudokuCell
+enum SudokuCell 
 {
-Q_OBJECT
-
- public:
-    explicit SudokuCell();
-    explicit SudokuCell(SudokuCellValue value);
-
-    virtual ~SudokuCell();
-
- public:
-    SudokuCellValue value() const override;
-    void setValue(SudokuCellValue value) override;
-    int bitValue() const override;
-
- private:
-    SudokuCellValue mValue;
+    BLANK = 0,
+    _1 = 1,
+    _2 = 2,
+    _3 = 3,
+    _4 = 4,
+    _5 = 5,
+    _6 = 6,
+    _7 = 7,
+    _8 = 8,
+    _9 = 9
 };
 
-
-#endif //SUDOKUCELL_H
+#endif // SUDOKUCELL_H

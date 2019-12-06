@@ -1,13 +1,12 @@
 
 set(TestedLibrary SudokuSolverLibrary)
-set(TestedClass SudokuPuzzle)
-set(TestExecutable RunTests_${TestedClass})
+set(TestExecutable RunTests_${TestedLibrary})
 
-set(test_sources ${CMAKE_CURRENT_SOURCE_DIR}/Test${TestedClass}.cpp)
+set(sources ${CMAKE_CURRENT_SOURCE_DIR}/TestSudokuPuzzle.cpp)
 
 add_executable(
     ${TestExecutable}
-    ${test_sources}
+    ${sources}
     )
 
 find_package(Qt5Widgets)
@@ -20,9 +19,12 @@ target_link_libraries(
     Qt5::Widgets
     )
 
+    find_package(Qt5Widgets)
+    # message("TEST: Qt5Widgets found...")
+    # message(${Qt5Widgets_FOUND})
+
 target_include_directories(${TestExecutable} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../../
-    ${PROJECT_BINARY_DIR}/googletest/googletest-src/googlemock/include
 )
 
 add_test(
