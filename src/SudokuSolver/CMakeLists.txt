@@ -1,11 +1,16 @@
 add_library(SudokuSolverLibrary "")
 
-file(GLOB all_headers
-  "*.h"
+set(all_headers
+    ${CMAKE_CURRENT_SOURCE_DIR}/I_SudokuPuzzleValidator.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/SudokuPuzzleValidator.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/SudokuCell.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/I_SudokuPuzzle.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/SudokuPuzzle.h
 )
 
-file(GLOB all_sources
-  "*.cpp"
+set(all_sources
+    ${CMAKE_CURRENT_SOURCE_DIR}/SudokuPuzzle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SudokuPuzzleValidator.cpp
 )
 
 target_sources(

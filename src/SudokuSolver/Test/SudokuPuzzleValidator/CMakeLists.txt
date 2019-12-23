@@ -1,6 +1,6 @@
 
 set(TestedLibrary SudokuSolverLibrary)
-set(TestedClass SudokuPuzzle)
+set(TestedClass SudokuPuzzleValidator)
 set(TestExecutable RunTests_${TestedClass})
 
 set(sources ${CMAKE_CURRENT_SOURCE_DIR}/Test${TestedClass}.cpp)
