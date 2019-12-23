@@ -125,7 +125,12 @@ namespace
 
         for(int quadrantIndex = 0; quadrantIndex < 9; quadrantIndex++)
         {
-
+            for (int i = 0; i < 9; i++)
+            {
+                int row = (quadrantIndex / 3)*3 + i / 3;
+                int column = (quadrantIndex % 3)*3 + i % 3;
+                ASSERT_EQ(mPatient->quadrantAt(quadrantIndex).at(i), mPatient->valueAt(row, column));
+            }
         }
     }
 
