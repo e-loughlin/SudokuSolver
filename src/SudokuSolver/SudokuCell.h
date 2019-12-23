@@ -2,8 +2,6 @@
    @file SudokuCell.h   
    
    Author: Evan Loughlin   
-
-   Description: Enumeration of possible values within a Sudoku Cell.
 */
 
 #ifndef SUDOKUCELL_H

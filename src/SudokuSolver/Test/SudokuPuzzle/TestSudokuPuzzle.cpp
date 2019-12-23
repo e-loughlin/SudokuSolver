@@ -155,8 +155,4 @@ namespace
         return randomMatrix;
     }
 
-    // QVector<QVector<SudokuCell>> TestSudokuPuzzle::quadrants(SudokuPuzzle puzzle)
-    // {
-    // }
-
 } //namespace

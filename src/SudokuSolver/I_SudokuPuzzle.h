@@ -1,11 +1,8 @@
-///-----------------------------------------------------------------------------
-/// @file I_SudokuPuzzle.h
-///
-/// Copyright (C) Evan Loughlin 2019
-///
-/// Description: 
-///-----------------------------------------------------------------------------
-
+/*
+   @file I_SudokuPuzzle.h 
+   
+   Author: Evan Loughlin   
+*/
 
 #ifndef ISUDOKUPUZZLE_H
 #define ISUDOKUPUZZLE_H

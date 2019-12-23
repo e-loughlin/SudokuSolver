@@ -2,8 +2,6 @@
    @file SudokuPuzzle.h   
    
    Author: Evan Loughlin   
-
-   Description: A 2x2 Matrix representation of a SudokuPuzzle
 */
 
 #ifndef SUDOKUPUZZLE_H
