@@ -1,9 +1,7 @@
 ///-----------------------------------------------------------------------------
 /// @file I_SudokuPuzzle.h
 ///
-/// Copyright (C) Circle Cardiovascular Imaging 2019/11/15
-///
-/// Author: Evan Loughlin
+/// Copyright (C) Evan Loughlin 2019
 ///
 /// Description: 
 ///-----------------------------------------------------------------------------
