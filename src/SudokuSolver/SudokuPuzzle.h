@@ -9,7 +9,6 @@
 
 #include "I_SudokuPuzzle.h"
 #include "SudokuCell.h"
-#include <QObject>
 #include <QVector>
 
 class SudokuPuzzle : public I_SudokuPuzzle

@@ -1,4 +1,5 @@
-add_library(SudokuSolverLibrary "")
+set(LibraryName SudokuSolverLibrary)
+add_library(${LibraryName} "")
 
 set(all_headers
     ${CMAKE_CURRENT_SOURCE_DIR}/I_SudokuPuzzleValidator.h
@@ -14,7 +15,7 @@ set(all_sources
 )
 
 target_sources(
-  SudokuSolverLibrary
+  ${LibraryName}
   PRIVATE
     ${all_sources}
   PUBLIC
@@ -22,7 +23,7 @@ target_sources(
 )
 
 target_include_directories(
-  SudokuSolverLibrary
+  ${LibraryName}
   PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
     ${PROJECT_BINARY_DIR}/googletest/googletest-src/googlemock/include
@@ -31,6 +32,6 @@ target_include_directories(
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-target_link_libraries(SudokuSolverLibrary PUBLIC Qt5::Widgets gmock gtest)
+target_link_libraries(${LibraryName} PUBLIC Qt5::Widgets gmock gtest)
 
 add_subdirectory(Test)

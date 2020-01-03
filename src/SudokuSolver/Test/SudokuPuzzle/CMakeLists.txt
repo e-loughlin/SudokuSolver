@@ -25,10 +25,3 @@ target_link_libraries(
 target_include_directories(${TestExecutable} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../../
 )
-
-add_test(
-  NAME
-    unit
-  COMMAND
-    ${CMAKE_CURRENT_BINARY_DIR}/${TestExecutable}
-  )

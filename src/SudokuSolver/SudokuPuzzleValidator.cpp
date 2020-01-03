@@ -13,4 +13,3 @@ bool SudokuPuzzleValidator::isValid(SudokuPuzzle& puzzle) const
 {
     return false;
 }
-

@@ -8,14 +8,10 @@
 
 #include "I_SudokuPuzzleValidator.h"
 
-#include <QObject>
-
 class SudokuPuzzle;
 
-class SudokuPuzzleValidator : public QObject, public I_SudokuPuzzleValidator
+class SudokuPuzzleValidator : public I_SudokuPuzzleValidator
 {
-Q_OBJECT
-
  public:
     explicit SudokuPuzzleValidator();
     virtual ~SudokuPuzzleValidator();
