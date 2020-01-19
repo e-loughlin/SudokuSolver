@@ -31,6 +31,8 @@ Keep the input.txt file in the same folder as the executable.
 #include <fstream>
 #include <cstdint>
 
+#include <QString>
+
 #include "SudokuPuzzle.h"
 #include "SudokuCell.h"
 
