@@ -35,9 +35,29 @@ namespace
         QScopedPointer<SudokuPuzzleValidator> mPatient;
     };
 
-    TEST_F(TestSudokuPuzzleValidator, CanBeInstantiated)
+    TEST_F(TestSudokuPuzzleValidator, willReturnTrueForEmptyPuzzle)
     {
+        auto emptyPuzzle = SudokuPuzzle();
+
+        ASSERT_TRUE(mPatient->isValid(emptyPuzzle));
 
     }
+
+    TEST_F(TestSudokuPuzzleValidator, willReturnFalseForPuzzleWithRepeatingElementsInAnyRow)
+    {
+        std::vector<int> puzzleData = {0, 1, 1, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0,};
+        auto puzzle = SudokuPuzzle(puzzleData);
+
+        ASSERT_FALSE(mPatient->isValid(puzzle));
+    }
+
 
 } //namespace

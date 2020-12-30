@@ -10,11 +10,13 @@
 #include "I_SudokuPuzzle.h"
 #include "SudokuCell.h"
 #include <QVector>
+#include <vector>
 
 class SudokuPuzzle : public I_SudokuPuzzle
 {
  public:
     explicit SudokuPuzzle();
+    explicit SudokuPuzzle(std::vector<int> listOfInts);
     explicit SudokuPuzzle(QVector<SudokuCell> cells);
     explicit SudokuPuzzle(QVector<QVector<SudokuCell>> cellMatrix);
 

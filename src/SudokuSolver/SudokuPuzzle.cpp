@@ -7,6 +7,18 @@ SudokuPuzzle::SudokuPuzzle()
     initializeBlankPuzzle();
 }
 
+SudokuPuzzle::SudokuPuzzle(std::vector<int> listOfInts)
+{
+    initializeBlankPuzzle();
+    for(int i = 0; i < listOfInts.size(); i++)
+    {
+        int rowIndex = i/9;
+        int columnIndex = i%9;
+        auto cellValue = SudokuCell(listOfInts[i]);
+        this->setCell(rowIndex, columnIndex, cellValue);
+    }
+}
+
 SudokuPuzzle::SudokuPuzzle(QVector<SudokuCell> listOfCells)
 {
     initializeBlankPuzzle();
